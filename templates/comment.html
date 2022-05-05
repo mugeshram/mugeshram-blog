@@ -1,0 +1,31 @@
+ <div  style="height:400px;overflow:auto;background-color:#0085A1;margin-top:50px;">
+          <div class="container d-flex justify-content-center mt-100 mb-100">
+  <div class="row">
+      <div class="col-md-12">
+
+        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Recent Comments</h4>
+                                <h6 class="card-subtitle">Latest Comments section by users</h6> </div>
+
+                            <div class="comment-widgets m-b-20">
+                        {%for comment in comments%}
+                           <div class="d-flex flex-row comment-row">
+                                    <div class="p-2"><span class="round"><img src="https://images.unsplash.com/photo-1541823709867-1b206113eafd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGdpcmwlMjBwcm9maWxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="user" width="50"></span></div>
+                                    <div class="comment-text w-100">
+                                        <h5>{{comment[1].username}}</h5>
+                                        <div class="comment-footer">
+                                            <span class="date">{{comment[0].date}}</span>
+
+                                        </div>
+                                        <p class="m-b-5 m-t-10">{{comment[0].comment|safe}}</p>
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+                        {%endfor%}
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
