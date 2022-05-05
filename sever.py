@@ -10,11 +10,12 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime as dt
 from post import Post
 from mail import Mailer
+import os
 
 import  time
 app = Flask(__name__)
-app.secret_key = "5548"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+app.secret_key = os.environ.get("SECRET_KEY")
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ckeditor = CKEditor(app)
