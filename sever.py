@@ -15,7 +15,7 @@ import os
 import  time
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://bnovpbceogtlgj:0fa062e63979ea8a5319d1f48745a31bec807e9e0ec03c2157553fcf4ba7b13b@ec2-18-210-64-223.compute-1.amazonaws.com:5432/d2245hivghv4kg"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ckeditor = CKEditor(app)
